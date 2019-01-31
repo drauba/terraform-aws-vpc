@@ -58,6 +58,6 @@ module "vpc" {
   }
   
   private_subnet_tags = {
-    Name        = "vault"
+    App       = "vault"
    }
 }
