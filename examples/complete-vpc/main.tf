@@ -4,7 +4,7 @@ data "aws_security_group" "default" {
 }
 
 module "vpc" {
-  source = "../../"
+  source = "terraform-aws-modules/vpc/aws"
 
   name = "hub-vpc"
 
