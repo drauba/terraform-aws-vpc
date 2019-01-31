@@ -110,6 +110,17 @@ resource "aws_route_table" "private" {
   }
 }
 
+resource "aws_route" "private_vpn_gateway" {
+
+  route_table_id         = "${aws_route_table.private.id}"
+  destination_cidr_block = "192.168.1.0/24"
+  gateway_id             = "${aws_vpn_gateway.this.id}"
+
+  timeouts {
+    create = "5m"
+  }
+}
+
 #################
 # Database routes
 #################
