@@ -56,4 +56,8 @@ module "vpc" {
     Environment = "prod"
     Name        = "hub"
   }
+  
+  private_subnet_tags = {
+    Name        = "vault"
+   }
 }
