@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "eu-west-1"
-}
-
 data "aws_security_group" "default" {
   name   = "default"
   vpc_id = "${module.vpc.vpc_id}"
@@ -10,11 +6,11 @@ data "aws_security_group" "default" {
 module "vpc" {
   source = "../../"
 
-  name = "complete-example"
+  name = "hub-vpc"
 
   cidr = "10.10.0.0/16"
 
-  azs                 = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
+  azs                 = ["us-west-2a", "us-west-2b", "us-west-2c"]
   private_subnets     = ["10.10.1.0/24", "10.10.2.0/24", "10.10.3.0/24"]
   public_subnets      = ["10.10.11.0/24", "10.10.12.0/24", "10.10.13.0/24"]
   database_subnets    = ["10.10.21.0/24", "10.10.22.0/24", "10.10.23.0/24"]
@@ -54,8 +50,8 @@ module "vpc" {
   ec2_endpoint_private_dns_enabled = true
   ec2_endpoint_security_group_ids  = ["${data.aws_security_group.default.id}"]
   tags = {
-    Owner       = "user"
-    Environment = "staging"
-    Name        = "complete"
+    Owner       = "drauba"
+    Environment = "prod"
+    Name        = "hub"
   }
 }
