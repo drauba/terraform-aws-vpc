@@ -32,7 +32,6 @@ module "vpc" {
 
   enable_dhcp_options              = true
   dhcp_options_domain_name         = "service.consul"
-  dhcp_options_domain_name_servers = ["127.0.0.1", "10.10.0.2"]
 
   # VPC endpoint for S3
   enable_s3_endpoint = true
@@ -45,8 +44,6 @@ module "vpc" {
   ssm_endpoint_private_dns_enabled = true
   ssm_endpoint_security_group_ids  = ["${data.aws_security_group.default.id}"]
 
-  //  ssm_endpoint_subnet_ids = ["..."]
-
   # VPC Endpoint for EC2
   enable_ec2_endpoint              = true
   ec2_endpoint_private_dns_enabled = true
@@ -57,7 +54,4 @@ module "vpc" {
     Name        = "hub"
   }
   
-  private_subnet_tags = {
-    App       = "vault"
-   }
 }
