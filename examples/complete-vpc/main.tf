@@ -23,7 +23,7 @@ module "vpc" {
   create_database_subnet_group = false
 
   enable_dns_hostnames = true
-  enable_dns_support   = tue
+  enable_dns_support   = true
 
   enable_nat_gateway = true
   single_nat_gateway = true
