@@ -52,6 +52,7 @@ module "vpc" {
     Owner       = "drauba"
     Environment = "prod"
     Name        = "hub"
+    App         = "hub"
   }
   
 }
