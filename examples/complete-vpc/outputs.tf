@@ -35,6 +35,11 @@ output "intra_subnets" {
   value       = ["${module.vpc.intra_subnets}"]
 }
 
+output "default_security_group_id" {
+   description = "Default Security Group ID"
+   value = "${module.vpc.default_security_group_id}"
+  }
+
 # NAT gateways
 output "nat_public_ips" {
   description = "List of public Elastic IPs created for AWS NAT Gateway"
