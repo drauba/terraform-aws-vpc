@@ -28,7 +28,7 @@ module "vpc" {
   enable_nat_gateway = true
   single_nat_gateway = true
 
-  enable_vpn_gateway = true
+  enable_vpn_gateway = false
 
   enable_dhcp_options              = true
   dhcp_options_domain_name         = "service.consul"
