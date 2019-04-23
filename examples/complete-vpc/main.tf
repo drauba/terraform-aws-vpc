@@ -6,7 +6,7 @@ data "aws_security_group" "default" {
 module "vpc" {
   
   source  = "app.terraform.io/meta7poc/vpc/aws"
-  version = "1.54"
+  version = "1.55"
   
   name = "hub-vpc"
 
