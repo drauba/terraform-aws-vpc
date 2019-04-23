@@ -109,7 +109,7 @@ resource "aws_route_table" "private" {
     ignore_changes = ["propagating_vgws"]
   }
 }
-
+/*
 resource "aws_route" "private_vpn_gateway" {
 
   route_table_id         = "${aws_route_table.private.id}"
@@ -120,7 +120,7 @@ resource "aws_route" "private_vpn_gateway" {
     create = "5m"
   }
 }
-
+*/
 #################
 # Database routes
 #################
